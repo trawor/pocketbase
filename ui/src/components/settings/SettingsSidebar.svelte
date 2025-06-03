@@ -48,29 +48,49 @@
             <i class="ri-time-line" aria-hidden="true"></i>
             <span class="txt">Crons</span>
         </a>
-
-        {#if !$hideControls}
-            <div class="sidebar-title">
-                <span class="txt">Sync</span>
-            </div>
-            <a
-                href="/settings/export-collections"
-                class="sidebar-list-item"
-                use:active={{ path: "/settings/export-collections/?.*" }}
-                use:link
-            >
-                <i class="ri-uninstall-line" aria-hidden="true" />
-                <span class="txt">Export collections</span>
-            </a>
-            <a
-                href="/settings/import-collections"
-                class="sidebar-list-item"
-                use:active={{ path: "/settings/import-collections/?.*" }}
-                use:link
-            >
-                <i class="ri-install-line" aria-hidden="true" />
-                <span class="txt">Import collections</span>
-            </a>
-        {/if}
+        <!--  ------------------------------------------Plugins -->
+        <div class="sidebar-title">Plugin</div>
+        <a
+            href="/settings/plugin/market"
+            class="sidebar-list-item"
+            use:active={{ path: "/settings/plugin/market/?.*" }}
+            use:link
+        >
+            <i class="ri-store-3-line" aria-hidden="true" />
+            <span class="txt">Plugin Market</span>
+        </a>
+        <!--  ------------------------------------------Plugins -->
+        <div class="sidebar-title">User</div>
+        <a
+            href="/settings/users"
+            class="sidebar-list-item"
+            use:active={{ path: "/settings/users/?.*" }}
+            use:link
+        >
+            <i class="ri-user-3-line" aria-hidden="true" />
+            {#if !$hideControls}
+                <div class="sidebar-title">
+                    <span class="txt">Sync</span>
+                </div>
+                <a
+                    href="/settings/export-collections"
+                    class="sidebar-list-item"
+                    use:active={{ path: "/settings/export-collections/?.*" }}
+                    use:link
+                >
+                    <i class="ri-uninstall-line" aria-hidden="true" />
+                    <span class="txt">Export collections</span>
+                </a>
+                <a
+                    href="/settings/import-collections"
+                    class="sidebar-list-item"
+                    use:active={{ path: "/settings/import-collections/?.*" }}
+                    use:link
+                >
+                    <i class="ri-install-line" aria-hidden="true" />
+                    <span class="txt">Import collections</span>
+                </a>
+            {/if}
+        </a>
     </div>
 </PageSidebar>
