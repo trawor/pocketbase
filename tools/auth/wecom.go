@@ -31,9 +31,9 @@ type WecomProvider struct {
 func NewWecomProvider() *WecomProvider {
 	p := &WecomProvider{}
 	p.SetPKCE(false)
-	p.SetDisplayName("企业微信")
+	p.SetDisplayName("WeCom")
 	// p.SetScopes([]string{"snsapi_privateinfo"})
-	p.SetAuthURL("https://login.work.weixin.qq.com/wwlogin/sso/login") //"https://open.weixin.qq.com/connect/oauth2/authorize"
+	p.SetAuthURL("https://login.work.weixin.qq.com/wwlogin/sso/login")
 	p.SetTokenURL("https://qyapi.weixin.qq.com/cgi-bin/auth/getuserinfo")
 	p.SetUserInfoURL("https://qyapi.weixin.qq.com/cgi-bin/auth/getuserdetail")
 	return p
@@ -140,10 +140,12 @@ func (p *WecomProvider) BuildAuthURL(state string, opts ...oauth2.AuthCodeOption
 		"&state=" + state +
 		"&login_type=CorpApp"
 	// "#wechat_redirect"
-	if agentId, ok := p.Extra()["AgentID"]; ok {
+	if agentId, ok := p.Extra()["agentID"]; ok {
+		p.SetAuthURL("https://login.work.weixin.qq.com/wwlogin/sso/login")
 		url += "&scope=snsapi_privateinfo&agentid=" + agentId.(string)
 	} else {
-		url += "&scope=snsapi_base"
+		p.SetAuthURL("https://open.weixin.qq.com/connect/oauth2/authorize")
+		url += "&scope=snsapi_base#wechat_redirect"
 	}
 	return url
 }
