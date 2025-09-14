@@ -17,14 +17,13 @@
         <i class="ri-information-line" />
     </div>
     <div class="content">
-        Note that the Lark user's <strong>Union ID</strong> will be used for the association with the
-        PocketBase user (see
+        With <strong>AgentID</strong>, user will simplely onetap to login WeCom (see
         <a
-            href="https://open.feishu.cn/document/platform-overveiw/basic-concepts/user-identity-introduction/introduction#3f2d4b63"
+            href="https://developer.work.weixin.qq.com/document/path/98152"
             target="_blank"
             rel="noopener noreferrer"
         >
-            Different Types of Lark IDs
+            WeCom OAuth docs
         </a>
         ).
     </div>
