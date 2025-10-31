@@ -48,7 +48,18 @@
             <i class="ri-time-line" aria-hidden="true"></i>
             <span class="txt">Crons</span>
         </a>
-
+        <!--  ------------------------------------------Plugins -->
+        <div class="sidebar-title">Plugin</div>
+        <a
+            href="/settings/plugin-market"
+            class="sidebar-list-item"
+            use:active={{ path: "/settings/plugin-market/?.*" }}
+            use:link
+        >
+            <i class="ri-store-3-line" aria-hidden="true" />
+            <span class="txt">Plugin Market</span>
+        </a>
+        <!--  ------------------------------------------Plugins -->
         {#if !$hideControls}
             <div class="sidebar-title">
                 <span class="txt">Sync</span>

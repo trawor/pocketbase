@@ -1,0 +1,40 @@
+{
+  "name": "Go",
+  "image": "git.travis.wang/library/devcon/golang:1.0",
+  "containerEnv": {
+    "TZ": "Asia/Shanghai",
+    "GOPRIVATE": "git.travis.wang",
+    "GOPROXY": "https://goproxy.cn,direct",
+    "DEV": "${localEnv:DEV}"
+  },
+  "mounts": [
+    "source=${localEnv:DEV},target=${localEnv:DEV},type=bind,consistency=cached",
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind,consistency=cached"
+  ],
+  "runArgs": [
+    "--name",
+    "dev_go_${localWorkspaceFolderBasename}"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true,
+        "go.useLanguageServer": true,
+        "gopls": {
+          "usePlaceholders": false,
+          "staticcheck": true,
+          "ui.diagnostic.analyses": {
+            "ST1000": false,
+            "ST1003": false,
+            "ST1005": false
+          },
+          "formatting.gofumpt": true
+        }
+      },
+      "extensions": [
+        "golang.go"
+      ]
+    }
+  }
+}
