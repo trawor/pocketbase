@@ -1,5 +1,6 @@
 import AppleOptions from "@/components/collections/providers/AppleOptions.svelte";
 import LarkOptions from "@/components/collections/providers/LarkOptions.svelte";
+import WeComOptions from "@/components/collections/providers/WeComOptions.svelte";
 import MicrosoftOptions from "@/components/collections/providers/MicrosoftOptions.svelte";
 import OIDCOptions from "@/components/collections/providers/OIDCOptions.svelte";
 import SelfHostedOptions from "@/components/collections/providers/SelfHostedOptions.svelte";
@@ -105,14 +106,14 @@ export default [
         logo: "linear.svg",
     },
     {
-        key:   "notion",
+        key: "notion",
         title: "Notion",
-        logo:  "notion.svg",
+        logo: "notion.svg",
     },
     {
-        key:   "monday",
+        key: "monday",
         title: "monday.com",
-        logo:  "monday.svg",
+        logo: "monday.svg",
     },
     {
         key: "lark",
@@ -121,9 +122,15 @@ export default [
         optionsComponent: LarkOptions,
     },
     {
-        key:   "box",
+        key: "wecom",
+        title: "WeCom",
+        logo: "wecom.svg",
+        optionsComponent: WeComOptions,
+    },
+    {
+        key: "box",
         title: "Box",
-        logo:  "box.svg",
+        logo: "box.svg",
     },
     {
         key: "spotify",
